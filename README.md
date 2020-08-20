@@ -15,4 +15,4 @@
 `python webshelldetect_v1.py <目录名> [文件修改时间开始如：2020101] [文件修改时间结束如：20200820,缺省为当前时间]`
 
 # 演示：
-![demo](https://raw.githubusercontent.com/SecurityCN/webshelldetect/master/demo.pngg)
+![demo](https://raw.githubusercontent.com/SecurityCN/webshelldetect/master/demo.png)
