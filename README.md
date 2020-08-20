@@ -13,3 +13,6 @@
 
 使用2:查杀目录,支持自定义文件修改时间范围 格式为2020101 2020830缺省为当前时间  
 `python webshelldetect_v1.py <目录名> [文件修改时间开始如：2020101] [文件修改时间结束如：20200820,缺省为当前时间]`
+
+# 演示：
+![demo](https://raw.githubusercontent.com/SecurityCN/webshelldetect/master/demo.pngg)
