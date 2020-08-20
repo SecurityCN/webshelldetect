@@ -1,4 +1,4 @@
-# HW必备蓝方Webshell 查杀工具
+# HVV必备蓝方Webshell 查杀工具
 # webshelldetect  
 正式版v1.0   
 1.兼容py2 py3  
