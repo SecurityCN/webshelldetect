@@ -39,16 +39,14 @@ def Scanfile(filepath):
     #print(lastmodifytime)
     if filepath.find(u'.') != -1:
         _ext = filepath[(filepath.rindex(u'.')+1):].lower()
-        if 'php' in _ext  or 'jsp' in _ext  or 'asp' in _ext  or 'cer' in _ext  or  'asa' in _ext:
-            try:
-                file = io.open(filepath,'r',encoding="gbk")
-            except  e as Exception:
-                file = io.open(filepath,'r',encoding="utf-8")
-                
-            filestr = file.read()
-             #print(filestr)
-            # file.close()
-            for rule in rulelist:
+        if 'php' in _ext  or 'jsp' in _ext  or 'asp' in _ext  or 'cer' in _ext  or  'asa' in _ext or  'phtml' in _ext:
+            file = io.open(filepath,'rb')
+            filestr =file.read()
+            for line in rulelist:
+                try:
+                    rule = bytes(line,encoding='utf8')  #py3 bytes
+                except (OSError, TypeError) as reason:
+                    rule = bytes(line)  #py2 bytes
                 result = re.compile(rule).findall(filestr)
                 #print(result)
                 if result:
@@ -57,9 +55,9 @@ def Scanfile(filepath):
                     print(u'lastmodifytime：'+str(lastmodifytime))
                     print(u'\n\n')
                     break # find a evil function to find the shell. If you want to traverse all functions, please comment this line
+            file.close()
         else:
             pass
-
 
 
 def Scandir(dirname):
